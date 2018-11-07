@@ -1,16 +1,23 @@
 <div class="chat-window">
-  <div class="row">
-    <div class="col text-left titulo">Chat</div>
-    <div class="col text-center estado">{{estado}}</div>
-  </div> 
-  <hr>
-  <div class="app-mensajes" id="app-mensajes">
-    <div class="text-right"  *ngFor="let mensaje of chat | async ; let n=''">
-      <span class="badge badge-primary">{{mensaje.nombre}}</span>
-      <p>{{mensaje.mensaje}}</p>
+    <div class="row">
+      <div class="col text-left titulo">Chat</div>
+      <div class="col text-center estado">{{estado}}</div>
     </div>
-  </div>
-  <div class="contenedor-input-mensaje">
-    <input class="form-control" type="text" name="mensaje" [(ngModel)]="mensaje" (keyup.enter)="enviar(mensaje)" placeholder="Escribe tu mensaje...">
-  </div>  
+    <hr>
+    <app-login></app-login>
+    <div class="app-mensajes" id="app-mensajes">
+      <div class="containermsgs" *ngIf="chatSvc.usuario && chatSvc.usuario.uid">
+        <div [ngClass]="{'text-right': chatSvc.usuario.uid == mensaje.uid, 'text-left': chatSvc.usuario.uid != mensaje.uid }"
+                      *ngFor="let mensaje of chatSvc.mensajes | async ; let n=''">
+          <span class="badge badge-primary" 
+            [ngClass]="{'badge-success': chatSvc.usuario.uid != mensaje.uid }" >{{mensaje.nombre}}</span>
+          <p>{{mensaje.mensaje}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="contenedor-input-mensaje">
+      <input class="form-control" type="text" name="mensaje" [(ngModel)]="mensaje" (keyup.enter)="enviar(mensaje)"
+        placeholder="Escribe tu mensaje...">
+    </div>
+
 </div>

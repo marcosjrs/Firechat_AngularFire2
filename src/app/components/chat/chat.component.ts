@@ -14,9 +14,7 @@ export class ChatComponent {
   estado:string;
   elMensajes:any; //elemento html contenedor de los mensajes
 
-  constructor(public chatSvc:ChatService) {
-    this.chat = chatSvc.mensajes;
-  }
+  constructor(public chatSvc:ChatService) { }
 
   enviar(msg){
 
@@ -47,7 +45,7 @@ export class ChatComponent {
   }
 
   scrolearAutomaticamente(retardo:number = 500){
-    setTimeout( ()=>this.elMensajes.scrollTop =  this.elMensajes.scrollHeight, retardo)
+    setTimeout( ()=>this.elMensajes.scrollTop =  this.elMensajes.scrollHeight, retardo)    
     
   }
 

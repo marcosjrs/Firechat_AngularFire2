@@ -1,0 +1,12 @@
+<div *ngIf="chatSvc.usuario && chatSvc.usuario.uid" class="text-right">
+      <button class="btn btn-outline-danger btn-xs"(click)="logout()">Logout</button>
+</div>
+
+<div *ngIf="!chatSvc.usuario || !chatSvc.usuario.uid">
+  <div class="row">
+      <div class="col-12 text-center">
+        <p>Ingresa en el Chat con tu cuenta favorita</p>
+        <button class="btn btn-outline-primary"(click)="login('google')">Google</button>
+      </div>
+    </div>
+</div>

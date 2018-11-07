@@ -32,6 +32,11 @@ En mi caso los quitaría de: ```https://console.firebase.google.com/project/fire
 
 En este proyecto se creo una Database de Cloud Firestore (En modo bloqueo), y dentro de esta una colección llamada chats. (Despues para hacer pruebas, se fue hasta el apartado de Reglas y se modificó el false por un true, que se quitará cuanto tengamos configurado el logeo de usuario)
 
+---
+
+Para poder autenticarse con usuario Google, se tuvo que activar en el proyecto de firebase, pulsando en Authentication > Pestaña "Método de inicio de sesión" ( en mi caso:  ``` https://console.firebase.google.com/project/firechat-mjrs/authentication/providers``` ), ahí vamos a Google y Habilitamos (puede ser que ahora haya que meter el gmail de mantenimiento).
+Y luego: https://github.com/angular/angularfire2/blob/master/docs/auth/getting-started.md
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
