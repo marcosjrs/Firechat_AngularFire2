@@ -9,6 +9,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 https://github.com/angular/angularfire2
 https://github.com/angular/angularfire2/blob/master/docs/install-and-setup.md
+https://github.com/angular/angularfire2/blob/master/docs/firestore/collections.md
+
 
 Hay que añadir los datos correctos en enviroment.ts 
 
@@ -27,6 +29,8 @@ export const environment = {
 ```
 
 En mi caso los quitaría de: ```https://console.firebase.google.com/project/firechat-mjrs/settings/general/```
+
+En este proyecto se creo una Database de Cloud Firestore (En modo bloqueo), y dentro de esta una colección llamada chats. (Despues para hacer pruebas, se fue hasta el apartado de Reglas y se modificó el false por un true, que se quitará cuanto tengamos configurado el logeo de usuario)
 
 ## Development server
 
