@@ -1,0 +1,13 @@
+<div class="chat-window">
+  <h3>Chat</h3>
+  <hr>
+  <div class="app-mensajes" id="app-mensajes">
+    <div class="text-right"  *ngFor="let mensaje of chat | async ; let n=''">
+      <span class="badge badge-primary">{{mensaje.nombre}}</span>
+      <p>{{mensaje.mensaje}}</p>
+    </div>
+  </div>
+  <div class="contenedor-input-mensaje">
+    <input class="form-control" type="text" name="mensaje" [(ngModel)]="mensaje" (keyup.enter)="enviar(mensaje)">
+  </div>  
+</div>
