@@ -1,6 +1,32 @@
 # FireChat
 
+Proyecto cuya finalidad es relizar un chat con AngularFire2 y Bootstrap 4, siguiendo uno de los módulos del curso Angular:De cero a experto... 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
+
+
+## Enlaces y recordatorios
+
+https://github.com/angular/angularfire2
+https://github.com/angular/angularfire2/blob/master/docs/install-and-setup.md
+
+Hay que añadir los datos correctos en enviroment.ts 
+
+```
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: '<your-key>',
+    authDomain: '<your-project-authdomain>',
+    databaseURL: '<your-database-URL>',
+    projectId: '<your-project-id>',
+    storageBucket: '<your-storage-bucket>',
+    messagingSenderId: '<your-messaging-sender-id>'
+  }
+};
+```
+
+En mi caso los quitaría de: ```https://console.firebase.google.com/project/firechat-mjrs/settings/general/```
 
 ## Development server
 
