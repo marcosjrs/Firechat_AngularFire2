@@ -12,6 +12,7 @@ export class ChatComponent {
   chat: Observable<Mensaje[]>;
   mensaje:string;
   estado:string;
+  elMensajes:any; //elemento html contenedor de los mensajes
 
   constructor(public chatSvc:ChatService) {
     this.chat = chatSvc.mensajes;
@@ -25,6 +26,7 @@ export class ChatComponent {
                     data => {
                       this.mensaje= "";
                       this.cambiarEstado("Enviado");
+                      this.scrolearAutomaticamente(50);
                     }
                   )
                 .catch(
@@ -37,6 +39,16 @@ export class ChatComponent {
   cambiarEstado(estado){
     this.estado = estado;
     setTimeout(()=>this.estado="", 1000);
+  }
+
+  ngAfterViewInit(){
+    this.elMensajes = document.getElementById("app-mensajes");
+    this.scrolearAutomaticamente();
+  }
+
+  scrolearAutomaticamente(retardo:number = 500){
+    setTimeout( ()=>this.elMensajes.scrollTop =  this.elMensajes.scrollHeight, retardo)
+    
   }
 
 }
