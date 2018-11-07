@@ -17,8 +17,11 @@ export class ChatService {
     this.mensajes = this.mensajesCollection.valueChanges();
   }
 
-  enviarMsg(mensaje: Mensaje) {
-    this.mensajesCollection.add(mensaje);
+  enviarMsg(msg:string) {
+    const nombreUser = "Marcos";
+    const uidUser = "123";
+    let mensaje:Mensaje = {"nombre":nombreUser, "mensaje":msg, "fecha":new Date().getTime()}; //con new Mensaje revienta ...
+    return this.mensajesCollection.add(mensaje);
   }
 
 }
